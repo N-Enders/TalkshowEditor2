@@ -1,14 +1,16 @@
 extends HSplitContainer
 
+#Will be removed upon addition of of either start data or flowchart
+
+
 @onready var dictValues = DictionaryList.new(["","value2","gronk"])
 @onready var deleteable_text = preload("res://Tools/DeletableText/deleteable_text.tscn")
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Text.text = str(dictValues)
 
