@@ -26,5 +26,4 @@ func dict_value_change(change,value,ref):
 func _on_add_pressed():
 	var new_text = deleteable_text.instantiate()
 	$Items.add_child(new_text)
-	var DictVal = DictionaryValue.new(dictValues)
-	new_text.data_changed.connect(dict_value_change.bind(DictVal,new_text))
+	new_text.data_changed.connect(dict_value_change.bind(DictionaryValue.new(dictValues),new_text))

@@ -39,3 +39,4 @@ func setID(setter):
 #Used by BaseDictionary as a name for the value, all outside code must use either "getIndex()" or "getValue()"
 func _to_string():
 	return str(id)
+
