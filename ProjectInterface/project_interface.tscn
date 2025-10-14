@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnq1t8p5k6mxu"]
+[gd_scene load_steps=5 format=3 uid="uid://cnq1t8p5k6mxu"]
 
 [ext_resource type="Script" path="res://ProjectInterface/ProjectInterface.gd" id="1_gmf1m"]
 [ext_resource type="Script" path="res://ProjectInterface/FlowInfo.gd" id="2_6ruvr"]
-[ext_resource type="Script" path="res://ProjectInterface/ProjectInfo.gd" id="2_ujn24"]
+[ext_resource type="Script" path="res://ProjectInterface/StartInfo/ProjectInfo.gd" id="2_ujn24"]
+[ext_resource type="Script" path="res://ProjectInterface/StartInfo/Media/Media.gd" id="3_ktg8t"]
 
 [node name="ProjectInterface" type="Control"]
 layout_mode = 3
@@ -29,6 +30,7 @@ script = ExtResource("2_ujn24")
 
 [node name="Media" type="VBoxContainer" parent="SplitBetweenInfo/StartInfo"]
 layout_mode = 2
+script = ExtResource("3_ktg8t")
 
 [node name="NoneLabel" type="RichTextLabel" parent="SplitBetweenInfo/StartInfo/Media"]
 layout_mode = 2
