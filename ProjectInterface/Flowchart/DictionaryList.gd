@@ -43,3 +43,14 @@ func deleteRef(ref):
 #This is literally the exact thing needed to export the data to Talkshow's dict string
 func _to_string():
 	return "^".join(values)
+
+#Used to get a full list of values
+func get_values():
+	return values
+
+#Used to get a specific value, mainly used for importing.
+func get_value_index(index):
+	if index > len(values) - 1:
+		return null
+	else:
+		return values[index]

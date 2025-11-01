@@ -4,7 +4,7 @@ var dictValue
 
 signal data_changed
 
-\
+
 func set_text(text):
 	$Text.text = text
 

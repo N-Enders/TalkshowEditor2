@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bw524vge358ui"]
+[gd_scene load_steps=3 format=3 uid="uid://bw524vge358ui"]
 
 [ext_resource type="Script" path="res://ProjectInterface/StartInfo/Media/MediaEdit.gd" id="1_bcbax"]
+[ext_resource type="PackedScene" uid="uid://lppt7oqct3o1" path="res://ProjectInterface/StartInfo/Media/media_version.tscn" id="2_juekq"]
 
 [node name="MediaEdit" type="GraphNode"]
+custom_minimum_size = Vector2(500, 0)
 offset_right = 500.0
 offset_bottom = 55.0
 title = "Media (ID)"
@@ -33,7 +35,35 @@ slot/2/right_type = 0
 slot/2/right_color = Color(1, 1, 1, 1)
 slot/2/right_icon = null
 slot/2/draw_stylebox = true
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color(1, 1, 1, 1)
+slot/3/left_icon = null
+slot/3/right_enabled = false
+slot/3/right_type = 0
+slot/3/right_color = Color(1, 1, 1, 1)
+slot/3/right_icon = null
+slot/3/draw_stylebox = true
+slot/4/left_enabled = false
+slot/4/left_type = 0
+slot/4/left_color = Color(1, 1, 1, 1)
+slot/4/left_icon = null
+slot/4/right_enabled = false
+slot/4/right_type = 0
+slot/4/right_color = Color(1, 1, 1, 1)
+slot/4/right_icon = null
+slot/4/draw_stylebox = true
+slot/5/left_enabled = false
+slot/5/left_type = 0
+slot/5/left_color = Color(1, 1, 1, 1)
+slot/5/left_icon = null
+slot/5/right_enabled = false
+slot/5/right_type = 0
+slot/5/right_color = Color(1, 1, 1, 1)
+slot/5/right_icon = null
+slot/5/draw_stylebox = true
 script = ExtResource("1_bcbax")
+versionEdit = ExtResource("2_juekq")
 
 [node name="TypeLabel" type="Label" parent="."]
 layout_mode = 2
@@ -49,6 +79,10 @@ popup/item_1/id = 1
 popup/item_2/text = "Text"
 popup/item_2/id = 2
 
+[node name="Container" type="Container" parent="."]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
 [node name="Medias" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -56,3 +90,13 @@ theme_override_constants/margin_right = 10
 
 [node name="MediaList" type="VBoxContainer" parent="Medias"]
 layout_mode = 2
+
+[node name="Container2" type="Container" parent="."]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="AddVersion" type="Button" parent="."]
+layout_mode = 2
+text = "Add Version"
+
+[connection signal="pressed" from="AddVersion" to="." method="_on_add_version_pressed"]

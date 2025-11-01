@@ -57,6 +57,7 @@ text = "ID"
 
 [node name="IdEdit" type="LineEdit" parent="IdInfo/Id"]
 layout_mode = 2
+text = "0"
 
 [node name="Locale" type="VBoxContainer" parent="IdInfo"]
 layout_mode = 2
@@ -103,5 +104,3 @@ text = "Type"
 
 [node name="TypeEdit" type="LineEdit" parent="FileInfo/Type"]
 layout_mode = 2
-
-[connection signal="text_changed" from="DictEdit" to="." method="_on_text_edit_text_changed"]

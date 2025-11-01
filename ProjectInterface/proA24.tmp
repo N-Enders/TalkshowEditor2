@@ -1,0 +1,217 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnq1t8p5k6mxu"]
+
+[ext_resource type="Script" path="res://ProjectInterface/ProjectInterface.gd" id="1_gmf1m"]
+[ext_resource type="Script" path="res://ProjectInterface/FlowInfo.gd" id="2_6ruvr"]
+[ext_resource type="Script" path="res://ProjectInterface/StartInfoContainer.gd" id="2_ll45a"]
+[ext_resource type="Script" path="res://ProjectInterface/StartInfo/ProjectInfo.gd" id="2_ujn24"]
+[ext_resource type="Script" path="res://ProjectInterface/StartInfo/Media/Media.gd" id="3_ktg8t"]
+
+[node name="ProjectInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gmf1m")
+
+[node name="SplitBetweenInfo" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 300
+
+[node name="StartInfoContainer" type="VBoxContainer" parent="SplitBetweenInfo"]
+layout_mode = 2
+script = ExtResource("2_ll45a")
+
+[node name="StartInfo" type="TabContainer" parent="SplitBetweenInfo/StartInfoContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+drag_to_rearrange_enabled = true
+script = ExtResource("2_ujn24")
+
+[node name="Media" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo"]
+layout_mode = 2
+script = ExtResource("3_ktg8t")
+
+[node name="NoneLabel" type="RichTextLabel" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Media"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]No Media"
+fit_content = true
+
+[node name="Container" type="Container" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Media"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ContentScroll" type="ScrollContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Media"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Content" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Media/ContentScroll"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Add" type="Button" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Media"]
+layout_mode = 2
+text = "Add Media"
+
+[node name="Packages" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo"]
+visible = false
+layout_mode = 2
+
+[node name="NoneLabel" type="RichTextLabel" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Packages"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]No Packages"
+fit_content = true
+
+[node name="Container" type="Container" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Packages"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ContentScroll" type="ScrollContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Packages"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Content" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Packages/ContentScroll"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Add" type="Button" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Packages"]
+layout_mode = 2
+text = "Add Package"
+
+[node name="Actions" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo"]
+visible = false
+layout_mode = 2
+
+[node name="NoneLabel" type="RichTextLabel" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Actions"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]No Actions"
+fit_content = true
+
+[node name="Container" type="Container" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Actions"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ContentScroll" type="ScrollContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Actions"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Content" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Actions/ContentScroll"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Add" type="Button" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Actions"]
+layout_mode = 2
+text = "Add Action"
+
+[node name="Templates" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo"]
+visible = false
+layout_mode = 2
+
+[node name="NoneLabel" type="RichTextLabel" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Templates"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]No Templates"
+fit_content = true
+
+[node name="Container" type="Container" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Templates"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ContentScroll" type="ScrollContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Templates"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Content" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Templates/ContentScroll"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Add" type="Button" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Templates"]
+layout_mode = 2
+text = "Add Template"
+
+[node name="Flowcharts" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo"]
+visible = false
+layout_mode = 2
+
+[node name="NoneLabel" type="RichTextLabel" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Flowcharts"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]No Flowcharts"
+fit_content = true
+
+[node name="Container" type="Container" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Flowcharts"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Add" type="Button" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Flowcharts"]
+layout_mode = 2
+text = "Add Flowchart"
+
+[node name="ContentScroll" type="ScrollContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Flowcharts"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Content" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Flowcharts/ContentScroll"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Projects" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo"]
+visible = false
+layout_mode = 2
+
+[node name="NoneLabel" type="RichTextLabel" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Projects"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]No Projects"
+fit_content = true
+
+[node name="Container" type="Container" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Projects"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ContentScroll" type="ScrollContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Projects"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Content" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Projects/ContentScroll"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Add" type="Button" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Projects"]
+layout_mode = 2
+text = "Add Project"
+
+[node name="Filter" type="HBoxContainer" parent="SplitBetweenInfo/StartInfoContainer"]
+layout_mode = 2
+
+[node name="FilterEdit" type="LineEdit" parent="SplitBetweenInfo/StartInfoContainer/Filter"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FilterSubmit" type="Button" parent="SplitBetweenInfo/StartInfoContainer/Filter"]
+layout_mode = 2
+text = "Filter"
+
+[node name="FlowInfo" type="VSplitContainer" parent="SplitBetweenInfo"]
+layout_mode = 2
+split_offset = 800
+script = ExtResource("2_6ruvr")
+
+[node name="Flowcharts" type="TabContainer" parent="SplitBetweenInfo/FlowInfo"]
+layout_mode = 2
+
+[node name="ActionContainer" type="HBoxContainer" parent="SplitBetweenInfo/FlowInfo"]
+layout_mode = 2
+
+[connection signal="dragged" from="SplitBetweenInfo" to="." method="_on_split_between_info_dragged"]
+[connection signal="pressed" from="SplitBetweenInfo/StartInfoContainer/StartInfo/Media/Add" to="SplitBetweenInfo/StartInfoContainer/StartInfo/Media" method="_on_add_pressed"]
+[connection signal="pressed" from="SplitBetweenInfo/StartInfoContainer/Filter/FilterSubmit" to="SplitBetweenInfo/StartInfoContainer" method="_on_filter_submit_pressed"]
