@@ -1,7 +1,7 @@
 extends Control
 
 
-const bar_bounds = [20,300] #This is the bound for the bar, used in _on_split_between_info_dragged
+const bar_bounds = [20,500] #This is the bound for the bar, used in _on_split_between_info_dragged
 
 
 var flowcharts_ref = [] #Charts reference
@@ -20,7 +20,6 @@ var packages = [] #Actions are in individual packages, also animations ig
 var flowcharts = [] #Individual flow data, will be getting updated a lot
 var actions = [] #Functions pretty much, also pain town usa
 var templates = [] #Templates, pretty much prompt data, unsure how used it is
-var media = [] #Texts/Audios/Images yay
 
 
 var start_data_class = null
