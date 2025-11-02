@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnq1t8p5k6mxu"]
+[gd_scene load_steps=8 format=3 uid="uid://cnq1t8p5k6mxu"]
 
 [ext_resource type="Script" path="res://ProjectInterface/ProjectInterface.gd" id="1_gmf1m"]
 [ext_resource type="Script" path="res://ProjectInterface/FlowInfo.gd" id="2_6ruvr"]
 [ext_resource type="Script" path="res://ProjectInterface/StartInfoContainer.gd" id="2_ll45a"]
 [ext_resource type="Script" path="res://ProjectInterface/StartInfo/ProjectInfo.gd" id="2_ujn24"]
 [ext_resource type="Script" path="res://ProjectInterface/StartInfo/Media/Media.gd" id="3_ktg8t"]
+[ext_resource type="Script" path="res://ProjectInterface/StartInfo/Projects/Projects.gd" id="5_odmpc"]
+[ext_resource type="Script" path="res://ProjectInterface/StartInfo/Packages/Packages.gd" id="6_cy20l"]
 
 [node name="ProjectInterface" type="Control"]
 layout_mode = 3
@@ -63,6 +65,7 @@ text = "Add Media"
 [node name="Packages" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo"]
 visible = false
 layout_mode = 2
+script = ExtResource("6_cy20l")
 
 [node name="NoneLabel" type="RichTextLabel" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Packages"]
 layout_mode = 2
@@ -167,6 +170,7 @@ size_flags_vertical = 3
 [node name="Projects" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo"]
 visible = false
 layout_mode = 2
+script = ExtResource("5_odmpc")
 
 [node name="NoneLabel" type="RichTextLabel" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Projects"]
 layout_mode = 2
