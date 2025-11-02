@@ -5,6 +5,7 @@ var dictValue = null
 var tagValue = null
 var vidIDRef = null
 
+signal updated
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,6 +45,10 @@ func dict_value_change(value,valueRef):
 #Used for sending the data to the DictionaryList (this is only for line edit)
 func dict_value_change_line(new_value,value,valueRef):
 	value.setValue(new_value)
+
+
+func getDict():
+	return dictValue.getValue()
 
 
 func setid(id):

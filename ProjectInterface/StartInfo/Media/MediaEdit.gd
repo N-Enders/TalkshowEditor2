@@ -9,8 +9,9 @@ var versions = []
 var dictReference = null
 var vidReference = null
 
-const typeReferences = {"Audio":0,"Graphic":1,"Text":2, "A":0,"G":1,"T":2}
+const typeReferences = {"Audio":0,"Graphic":1,"Text":2,"A":0,"G":1,"T":2}
 
+signal updated
 
 #Potential additions: Add button for versions
 # collapsable versions (just setting $MediaList.visible to true and false starting with false)
@@ -53,6 +54,15 @@ func setID(id):
 	ID = int(id)
 	name = id
 	title = "Media (" + str(id) + ")"
+
+func getID():
+	return ID
+
+
+func get_presentable_text():
+	if len(versions) > 0:
+		return "(" + str(ID) + ") " + versions[0].getDict()
+	return "(" + str(ID) + ") No versions"
 
 
 func filter(filter_text):

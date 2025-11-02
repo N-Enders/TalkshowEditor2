@@ -6,6 +6,8 @@ var dictRef = null
 var currentID = 0
 var currentVID = SharedCounter.new()
 
+signal updated
+
 @onready var mediaCell = load("res://ProjectInterface/StartInfo/Media/media_edit.tscn")
 
 
@@ -20,25 +22,24 @@ func addMedia(mediaData):
 	if int(splitdata[0]) > currentID:
 		currentID = int(splitdata[0])
 	newMedia.setup_from_export(dictRef,currentVID,splitdata)
+	newMedia.updated.connect(func():
+		updated.emit())
 	$ContentScroll/Content.add_child(newMedia)
+	updated.emit()
 
 func removeMedia(id):
+	medias[str(id)].start_removal()
 	medias[str(id)].queue_free()
 	medias.erase(str(id))
+	updated.emit()
 
 func getMedia(id):
 	return medias[str(id)]
 
-func getMediaList(id):
-	return medias.values.map(func(value): return {"id":value.id,"text":value.get_presentable_text})
+func getMediaList():
+	return medias.values().map(func(value): return {"id":value.getID(),"text":value.get_presentable_text()})
 
 func filter(filter_text = ""):
-	if filter_text == "test":
-		print(build_talkshow())
-		return
-	if filter_text == "testobj":
-		print(save_as_object())
-		return
 	if filter_text == "":
 		for a in medias.values():
 			a.visible = true
@@ -57,6 +58,7 @@ func _on_add_pressed():
 	newMedia.setup(dictRef,currentVID,str(currentID))
 	medias[str(currentID)] = newMedia
 	$ContentScroll/Content.add_child(newMedia)
+	updated.emit()
 
 
 func save_as_object():
