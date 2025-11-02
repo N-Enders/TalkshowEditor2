@@ -11,9 +11,9 @@ extends TabContainer
 #Dictionary												TODO
 #Workspace Project Name/Timestamp (idk if we need it)	TODO
 #Media													DONE
-#Projects												DONE?
+#Projects												DONE
 #Flowcharts												TODO
-#Packages												DONE?
+#Packages												DONE
 #Actions												TODO
 #Templates												TODO
 

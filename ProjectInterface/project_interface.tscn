@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnq1t8p5k6mxu"]
+[gd_scene load_steps=10 format=3 uid="uid://cnq1t8p5k6mxu"]
 
 [ext_resource type="Script" path="res://ProjectInterface/ProjectInterface.gd" id="1_gmf1m"]
 [ext_resource type="Script" path="res://ProjectInterface/FlowInfo.gd" id="2_6ruvr"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://ProjectInterface/StartInfo/Media/Media.gd" id="3_ktg8t"]
 [ext_resource type="Script" path="res://ProjectInterface/StartInfo/Projects/Projects.gd" id="5_odmpc"]
 [ext_resource type="Script" path="res://ProjectInterface/StartInfo/Packages/Packages.gd" id="6_cy20l"]
+[ext_resource type="Script" path="res://ProjectInterface/StartInfo/Templates/Templates.gd" id="6_e3a66"]
+[ext_resource type="Script" path="res://ProjectInterface/StartInfo/Flowcharts/Flowcharts.gd" id="7_kgcif"]
 
 [node name="ProjectInterface" type="Control"]
 layout_mode = 3
@@ -118,6 +120,7 @@ text = "Add Action"
 [node name="Templates" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo"]
 visible = false
 layout_mode = 2
+script = ExtResource("6_e3a66")
 
 [node name="NoneLabel" type="RichTextLabel" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Templates"]
 layout_mode = 2
@@ -144,6 +147,7 @@ text = "Add Template"
 [node name="Flowcharts" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo"]
 visible = false
 layout_mode = 2
+script = ExtResource("7_kgcif")
 
 [node name="NoneLabel" type="RichTextLabel" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Flowcharts"]
 layout_mode = 2
@@ -155,10 +159,6 @@ fit_content = true
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
-[node name="Add" type="Button" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Flowcharts"]
-layout_mode = 2
-text = "Add Flowchart"
-
 [node name="ContentScroll" type="ScrollContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Flowcharts"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -166,6 +166,10 @@ size_flags_vertical = 3
 [node name="Content" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Flowcharts/ContentScroll"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="Add" type="Button" parent="SplitBetweenInfo/StartInfoContainer/StartInfo/Flowcharts"]
+layout_mode = 2
+text = "Add Flowchart"
 
 [node name="Projects" type="VBoxContainer" parent="SplitBetweenInfo/StartInfoContainer/StartInfo"]
 visible = false
