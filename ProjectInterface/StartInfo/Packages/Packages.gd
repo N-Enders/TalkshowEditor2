@@ -40,6 +40,9 @@ func getPackageList():
 
 
 func filter(filter_text = ""):
+	if filter_text == "test":
+		print(str(dictRef))
+		return
 	if filter_text == "":
 		for a in packages.values():
 			a.visible = true

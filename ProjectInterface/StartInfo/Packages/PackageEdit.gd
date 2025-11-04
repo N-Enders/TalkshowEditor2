@@ -19,8 +19,8 @@ func setup_from_export(dictRef:DictionaryList,data,projects):
 	update_project_select(projectRef)
 	var id = data.pop_front()
 	setID(id)
-	nameValue = DictionaryValue.new(dictRef,str(dictRef.get_value_index(int(data.pop_front()))))
-	$NameType/Name/NameEdit.text = nameValue.getValue()
+	nameValue = DictionaryValue.new(dictRef,str(dictRef.getValueIndex(int(data.pop_front()))))
+	$NameType/Name/NameEdit.text = nameValue.getDisplayValue()
 	$NameType/Name/NameEdit.text_changed.connect(dict_value_change_line.bind(nameValue,$NameType/Name/NameEdit)) #Setup for dictionary class for tags
 	var type = data.pop_front()
 	$NameType/Type/TypeSelect.selected = typeReferences[type]
@@ -57,7 +57,7 @@ func getID():
 
 
 func get_presentable_text():
-	return "(" + str(ID) + ") " + nameValue.getValue()
+	return "(" + str(ID) + ") " + nameValue.getDisplayValue()
 
 
 
@@ -65,7 +65,7 @@ func filter(filter_text):
 	if filter_text in str(ID):
 		visible = true
 		return
-	if filter_text in nameValue.getValue():
+	if filter_text in nameValue.getDisplayValue():
 		visible = true
 		return
 	visible = false

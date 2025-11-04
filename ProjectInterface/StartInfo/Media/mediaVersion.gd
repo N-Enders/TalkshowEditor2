@@ -78,6 +78,6 @@ func save_as_object():
 
 
 func filter(filter_text):
-	if filter_text in dictValue.getValue():
+	if filter_text in dictValue.getDisplayValue():
 		return true
 	return false

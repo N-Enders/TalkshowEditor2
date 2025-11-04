@@ -10,8 +10,8 @@ func setup_from_export(dictRef:DictionaryList,data):
 	dictReference = dictRef
 	var id = data.pop_front()
 	setID(id)
-	nameValue = DictionaryValue.new(dictRef,str(dictRef.get_value_index(int(data.pop_front()))))
-	$NameEdit.text = nameValue.getValue()
+	nameValue = DictionaryValue.new(dictRef,str(dictRef.getValueIndex(int(data.pop_front()))))
+	$NameEdit.text = nameValue.getDisplayValue()
 	$NameEdit.text_changed.connect(dict_value_change_line.bind(nameValue,$NameEdit)) #Setup for dictionary class for tags
 
 #Used for sending the data to the DictionaryList (this is only for line edit)
@@ -33,13 +33,13 @@ func getID():
 	return ID
 
 func get_presentable_text():
-	return "(" + str(ID) + ") " + nameValue.getValue()
+	return "(" + str(ID) + ") " + nameValue.getDisplayValue()
 
 func filter(filter_text):
 	if filter_text in str(ID):
 		visible = true
 		return
-	if filter_text in nameValue.getValue():
+	if filter_text in nameValue.getDisplayValue():
 		visible = true
 		return
 	visible = false

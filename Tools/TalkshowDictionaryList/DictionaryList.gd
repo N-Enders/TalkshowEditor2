@@ -8,7 +8,7 @@ var current_id = 0 #incremented each time a new value is added
 
 #If there is prexisting dictionary data it will get passed here on init.
 func _init(starting_dict = []):
-	values = starting_dict
+	values = Array(starting_dict)
 
 #Adds a value and hooks up its signal to the data changed function
 #Also starts the value off with an ID and sets its value in value_dict
@@ -49,8 +49,14 @@ func get_values():
 	return values
 
 #Used to get a specific value, mainly used for importing.
-func get_value_index(index):
+func getValueIndex(index):
 	if index > len(values) - 1:
 		return null
 	else:
 		return values[index]
+
+func getDisplayValueIndex(index):
+	if index > len(values) - 1:
+		return null
+	else:
+		return values[index].replace("&#8248;","^")

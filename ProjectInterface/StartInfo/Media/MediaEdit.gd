@@ -32,8 +32,8 @@ func setup_from_export(dictRef:DictionaryList,vidCounter:SharedCounter,data):
 		
 		var vid = data.pop_front()
 		var locale = data.pop_front()
-		var tag = dictRef.get_value_index(int(data.pop_front()))
-		var dict = dictRef.get_value_index(int(data.pop_front()))
+		var tag = dictRef.getDisplayValueIndex(int(data.pop_front()))
+		var dict = dictRef.getDisplayValueIndex(int(data.pop_front()))
 		var vtype = data.pop_front()
 		
 		

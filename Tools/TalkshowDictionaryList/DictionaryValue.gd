@@ -24,6 +24,10 @@ func setValue(value:String):
 func getValue():
 	return saved_value
 
+#Used to display the value that contains "^"
+func getDisplayValue():
+	return saved_value.replace("&#8248;","^")
+
 #Returns the index of the value in DictionaryList (used for building)
 func getIndex():
 	return parent_dictionary_list.getIndex(saved_value)
