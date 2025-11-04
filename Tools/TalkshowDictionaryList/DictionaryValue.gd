@@ -16,7 +16,7 @@ func _init(ref:DictionaryList,start_value:String = ""):
 
 #Sets the value to a string which tells the DictionaryList to update its values
 func setValue(value:String):
-	value = value.replace("^","") #Used to make sure it doesn't pass poisoned data, thats what im calling it ig
+	value = value.replace("^","&#8248;") # This allows for "^" to still be used in the dictionary lists
 	value_changed.emit(saved_value,value)
 	saved_value = value
 
