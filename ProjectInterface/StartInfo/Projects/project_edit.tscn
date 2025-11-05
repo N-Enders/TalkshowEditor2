@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://b86vgnkvduf14"]
+
+[ext_resource type="Script" path="res://ProjectInterface/StartInfo/Projects/project_edit.gd" id="1_b8lkj"]
+
+[node name="ProjectEdit" type="GraphNode"]
+custom_minimum_size = Vector2(500, 0)
+offset_right = 500.0
+offset_bottom = 55.0
+title = "Project (ID)"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+script = ExtResource("1_b8lkj")
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Name"
+
+[node name="NameEdit" type="LineEdit" parent="."]
+layout_mode = 2

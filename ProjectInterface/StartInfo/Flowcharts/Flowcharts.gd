@@ -7,7 +7,7 @@ var projectRef = null
 
 signal updated
 
-@onready var flowchartCell = load("res://ProjectInterface/StartInfo/Packages/package_edit.tscn")
+@onready var flowchartCell = load("res://ProjectInterface/StartInfo/Flowcharts/flowhchart_edit.tscn")
 
 # Just checks if it should hide the none label
 func _process(delta):
@@ -40,6 +40,9 @@ func getFlowchartList():
 
 
 func filter(filter_text = ""):
+	if filter_text == "test":
+		print(build_talkshow())
+		return
 	if filter_text == "":
 		for a in flowcharts.values():
 			a.visible = true

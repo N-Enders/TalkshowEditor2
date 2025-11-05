@@ -21,15 +21,12 @@ func setup_from_export(dictRef:DictionaryList,data,projects):
 	setID(id)
 	nameValue = DictionaryValue.new(dictRef,str(dictRef.getValueIndex(int(data.pop_front()))))
 	$NameType/Name/NameEdit.text = nameValue.getDisplayValue()
-	$NameType/Name/NameEdit.text_changed.connect(dict_value_change_line.bind(nameValue,$NameType/Name/NameEdit)) #Setup for dictionary class for tags
+	nameValue.connectValueEdit($NameType/Name/NameEdit)
 	var type = data.pop_front()
 	$NameType/Type/TypeSelect.selected = typeReferences[type]
 	var parentID = int(data.pop_front())
 	$ParentSelect.selected = $ParentSelect.get_item_index(parentID)
 
-#Used for sending the data to the DictionaryList (this is only for line edit)
-func dict_value_change_line(new_value,value,valueRef):
-	value.setValue(new_value)
 
 func update_project_select(projects):
 	var savedID = get_selected_parent_id()
@@ -43,8 +40,10 @@ func setup(dictRef:DictionaryList,id,projects):
 	dictReference = dictRef
 	setID(id)
 	projectRef = projects
+	projectRef.updated.connect(update_project_select.bind(projectRef))
+	update_project_select(projectRef)
 	nameValue = DictionaryValue.new(dictRef,"")
-	$NameType/Name/NameEdit.text_changed.connect(dict_value_change_line.bind(nameValue,$NameType/Name/NameEdit)) #Setup for dictionary class for tags
+	nameValue.connectValueEdit($NameType/Name/NameEdit)
 
 
 func setID(id):
@@ -74,7 +73,7 @@ func filter(filter_text):
 
 
 func _to_string():
-	return str(ID)+"|"+str(nameValue.getIndex())+"|"+["I","S","C"][$NameType/Type/TypeSelect.selected]+"|"+projectRef.getProject(get_selected_parent_id()).getID()
+	return str(ID)+"|"+str(nameValue.getIndex())+"|"+["I","S","C"][$NameType/Type/TypeSelect.selected]+"|"+str(projectRef.getProject(get_selected_parent_id()).getID())
 
 
 

@@ -32,19 +32,12 @@ func setup(id,locale,dict,tags,type):
 func setup_dictionary(dictRef:DictionaryList,vidCounter:SharedCounter,dict="",tags=""):
 	dictValue = DictionaryValue.new(dictRef,str(dict))
 	tagValue = DictionaryValue.new(dictRef,str(tags))
-	$DictEdit.text_changed.connect(dict_value_change.bind(dictValue,$DictEdit)) #Setup for dictionary class for dictionary
-	$FileInfo/Tags/TagEdit.text_changed.connect(dict_value_change_line.bind(tagValue,$FileInfo/Tags/TagEdit)) #Setup for dictionary class for tags
+	dictValue.connectValueEdit($DictEdit)
+	tagValue.connectValueEdit($FileInfo/Tags/TagEdit)
 	vidIDRef = vidCounter
 	$IdInfo/Id/IdEdit.text_changed.connect(id_changed.bind($IdInfo/Id/IdEdit))
 
 
-#Used for sending the data to the DictionaryList (this is only for box edit)
-func dict_value_change(value,valueRef):
-	value.setValue(valueRef.text)
-
-#Used for sending the data to the DictionaryList (this is only for line edit)
-func dict_value_change_line(new_value,value,valueRef):
-	value.setValue(new_value)
 
 
 func getDict():

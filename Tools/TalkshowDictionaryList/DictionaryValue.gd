@@ -44,3 +44,16 @@ func setID(setter):
 func _to_string():
 	return str(id)
 
+#Hooks up the node to the value
+func connectValueEdit(node,endFunc = (func():return)):
+	
+	if node is LineEdit:
+		node.text_changed.connect((func(new_value,value,endingRef):
+			value.setValue(new_value)
+			endingRef.call()).bind(self,endFunc))
+	elif node is TextEdit:
+		node.text_changed.connect((func(value,valueRef,endingRef):
+			value.setValue(valueRef.text)
+			endingRef.call()).bind(self,node,endFunc))
+	else:
+		assert(false, "Tried setting up dictionary value but " + node.type + " isn't supported")

@@ -12,17 +12,16 @@ func setup_from_export(dictRef:DictionaryList,data):
 	setID(id)
 	nameValue = DictionaryValue.new(dictRef,str(dictRef.getValueIndex(int(data.pop_front()))))
 	$NameEdit.text = nameValue.getDisplayValue()
-	$NameEdit.text_changed.connect(dict_value_change_line.bind(nameValue,$NameEdit)) #Setup for dictionary class for tags
+	nameValue.connectValueEdit($NameEdit,func():
+		updated.emit()) #Setup for dictionary class for tags
 
-#Used for sending the data to the DictionaryList (this is only for line edit)
-func dict_value_change_line(new_value,value,valueRef):
-	value.setValue(new_value)
 
 func setup(dictRef:DictionaryList,id):
 	dictReference = dictRef
 	setID(id)
 	nameValue = DictionaryValue.new(dictRef,"")
-	$NameEdit.text_changed.connect(dict_value_change_line.bind(nameValue,$NameEdit)) #Setup for dictionary class for tags
+	nameValue.connectValueEdit($NameEdit,func():
+		updated.emit()) #Setup for dictionary class for tags
 
 func setID(id):
 	ID = int(id)
