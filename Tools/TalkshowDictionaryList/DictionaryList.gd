@@ -50,13 +50,17 @@ func get_values():
 
 #Used to get a specific value, mainly used for importing.
 func getValueIndex(index):
-	if index > len(values) - 1:
+	if index == "":
+		return ""
+	if int(index) > len(values) - 1:
 		return null
 	else:
-		return values[index]
+		return values[int(index)]
 
 func getDisplayValueIndex(index):
-	if index > len(values) - 1:
+	if index == "":
+		return ""
+	if int(index) > len(values) - 1:
 		return null
 	else:
-		return values[index].replace("&#8248;","^")
+		return values[int(index)].replace("&#8248;","^")

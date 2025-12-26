@@ -42,65 +42,94 @@ slot/3/right_type = 0
 slot/3/right_color = Color(1, 1, 1, 1)
 slot/3/right_icon = null
 slot/3/draw_stylebox = true
+slot/4/left_enabled = false
+slot/4/left_type = 0
+slot/4/left_color = Color(1, 1, 1, 1)
+slot/4/left_icon = null
+slot/4/right_enabled = false
+slot/4/right_type = 0
+slot/4/right_color = Color(1, 1, 1, 1)
+slot/4/right_icon = null
+slot/4/draw_stylebox = true
+slot/5/left_enabled = false
+slot/5/left_type = 0
+slot/5/left_color = Color(1, 1, 1, 1)
+slot/5/left_icon = null
+slot/5/right_enabled = false
+slot/5/right_type = 0
+slot/5/right_color = Color(1, 1, 1, 1)
+slot/5/right_icon = null
+slot/5/draw_stylebox = true
+slot/6/left_enabled = false
+slot/6/left_type = 0
+slot/6/left_color = Color(1, 1, 1, 1)
+slot/6/left_icon = null
+slot/6/right_enabled = false
+slot/6/right_type = 0
+slot/6/right_color = Color(1, 1, 1, 1)
+slot/6/right_icon = null
+slot/6/draw_stylebox = true
+slot/7/left_enabled = false
+slot/7/left_type = 0
+slot/7/left_color = Color(1, 1, 1, 1)
+slot/7/left_icon = null
+slot/7/right_enabled = false
+slot/7/right_type = 0
+slot/7/right_color = Color(1, 1, 1, 1)
+slot/7/right_icon = null
+slot/7/draw_stylebox = true
+slot/8/left_enabled = false
+slot/8/left_type = 0
+slot/8/left_color = Color(1, 1, 1, 1)
+slot/8/left_icon = null
+slot/8/right_enabled = false
+slot/8/right_type = 0
+slot/8/right_color = Color(1, 1, 1, 1)
+slot/8/right_icon = null
+slot/8/draw_stylebox = true
 script = ExtResource("1_t5ckl")
 
-[node name="IdInfo" type="HBoxContainer" parent="."]
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Name"
+
+[node name="NameEdit" type="LineEdit" parent="."]
 layout_mode = 2
 
-[node name="Id" type="VBoxContainer" parent="IdInfo"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="IdLabel" type="Label" parent="IdInfo/Id"]
-layout_mode = 2
-text = "ID"
-
-[node name="IdEdit" type="LineEdit" parent="IdInfo/Id"]
-layout_mode = 2
-text = "0"
-
-[node name="Locale" type="VBoxContainer" parent="IdInfo"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="LocaleLabel" type="Label" parent="IdInfo/Locale"]
-layout_mode = 2
-text = "Locale"
-
-[node name="LocaleEdit" type="LineEdit" parent="IdInfo/Locale"]
-layout_mode = 2
-
-[node name="DictLabel" type="Label" parent="."]
-layout_mode = 2
-text = "Dict
-"
-
-[node name="DictEdit" type="TextEdit" parent="."]
-custom_minimum_size = Vector2(0, 31)
-layout_mode = 2
-scroll_fit_content_height = true
-
-[node name="FileInfo" type="HBoxContainer" parent="."]
-layout_mode = 2
-
-[node name="Tags" type="VBoxContainer" parent="FileInfo"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="TagLabel" type="Label" parent="FileInfo/Tags"]
-layout_mode = 2
-text = "Tags"
-
-[node name="TagEdit" type="LineEdit" parent="FileInfo/Tags"]
-layout_mode = 2
-
-[node name="Type" type="VBoxContainer" parent="FileInfo"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="TypeLabel" type="Label" parent="FileInfo/Type"]
+[node name="TypeLabel" type="Label" parent="."]
 layout_mode = 2
 text = "Type"
 
-[node name="TypeEdit" type="LineEdit" parent="FileInfo/Type"]
+[node name="TypeSelect" type="OptionButton" parent="."]
+layout_mode = 2
+item_count = 5
+popup/item_0/text = "Audio"
+popup/item_0/id = 0
+popup/item_1/text = "Boolean"
+popup/item_1/id = 1
+popup/item_2/text = "Graphic"
+popup/item_2/id = 2
+popup/item_3/text = "Number"
+popup/item_3/id = 3
+popup/item_4/text = "String"
+popup/item_4/id = 4
+
+[node name="DefaultValue" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Default Value"
+
+[node name="DefaultEdit" type="LineEdit" parent="."]
+layout_mode = 2
+
+[node name="DefaultBoolean" type="CheckButton" parent="."]
+layout_mode = 2
+text = "Boolean"
+
+[node name="VarLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Variable"
+
+[node name="VarEdit" type="LineEdit" parent="."]
 layout_mode = 2

@@ -79,7 +79,7 @@ func save_as_object():
 	return {"id":ID,
 	"name":nameValue.getValue(),
 	"type":$NameType/Type/TypeSelect.selected,
-	"Parent":projectRef.getProject(get_selected_parent_id()).getID()}
+	"parent":projectRef.getProject(get_selected_parent_id()).getID()}
 
 
 func get_selected_parent_id():
